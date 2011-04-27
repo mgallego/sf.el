@@ -1,0 +1,21 @@
+Once load the libary in your emacs, you can use this features.
+
+For call a function in emacs use M-x (Alt-x by default in PC) and type de function.
+
+M-x sf-app-config: Open the config file of the app in a new buffer
+
+M-x sf-app-parameters: Open the parameters file of the app in a new buffer
+
+M-x sf-app-security: Open the security config file of the app in a new buffer
+
+M-x sf-app-routing: Open the app routing configuration file in a new buffer
+
+M-x sf-app-kernel: Open the AppKernel file in a new buffer
+
+M-x sf-app-autoload: Open the autoload file in a new buffer
+
+M-x sf-cache-clear: Clear the cache, may not work correctly for the user's permissions
+
+M-x sf-console [parameters]: Calls the console, example: 
+    M-x sf-console [enter]
+    parameters: init:bundle BundleName src [enter]

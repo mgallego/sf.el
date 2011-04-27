@@ -1,0 +1,17 @@
+The instalation of sf.el is very simple.
+
+1. Open the .emacs configuration file in your favorite editor (emacs???) 
+
+2. Add the path of the sf.el, example:
+   (if (file-exists-p "~/.emacs.d/sf.el")
+    (load-file "~/.emacs.d/sf.el"))
+
+3. Add the path of the Symfony2 project. example:
+
+   (setq SFPath "~/SF2Instalation/")
+
+4. Reload emacs o reload the .emacs file with the load-file command.
+
+Thats is all
+
+You can view the atual functions of the library in HOWTO doc in the repository.
