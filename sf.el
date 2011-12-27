@@ -105,9 +105,12 @@
 (defun sf-namespace ()
   "insert-namespace"
   (interactive)
-  (insert (concat "namespace " default-directory))
+  (setq sf-file-path default-directory)
+  (setq sf-ini-match (+(string-match "src/" sf-file-path)4) )
+  (setq sf-file-path (substring sf-file-path sf-ini-match (- (length sf-file-path) 1)))
+  (setq sf-file-path (replace-regexp-in-string "/" "\\\\" sf-file-path))
+  (insert (concat "namespace " sf-file-path ";"))
 )
-
 
 (defvar sf-mode-keymap (make-keymap)
   "keymappings for sf-mode"
@@ -158,6 +161,12 @@
   'sf-generate-entities
 )
 
+(define-key sf-mode-keymap
+  (kbd "C-c C-s n")
+  'sf-namespace
+)
+
+
 ;;(define-key sf-mode-kemap [menu-bar] (make-sparse-keymap))
 
 
@@ -194,11 +203,11 @@
 (define-key sf-mode-keymap [menu-bar sf2 console]
   '("Execute console command" . sf-console))
 
-
 (define-key sf-mode-keymap [menu-bar sf2 generate-entities]
   '("Generate Entities..." . sf-generate-entities))
 
-
+(define-key sf-mode-keymap [menu-bar sf2 namespace]
+  '("Insert current namespace" . sf-namespace))
 
 
 ;;;###autoload
