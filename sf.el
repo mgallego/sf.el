@@ -90,6 +90,18 @@
     " " parameter))
 )
 
+;;generate entities
+(defun sf-generate-entities (bundle)
+  "generate-entities"
+  (interactive "sBundle:")
+  (shell-command
+   (concat
+    "php "
+    (expand-file-name "app/console " (eproject-root))
+    "doctrine:generate:entities " bundle))
+)
+
+
 (defvar sf-mode-keymap (make-keymap)
   "keymappings for sf-mode"
 )
@@ -132,6 +144,11 @@
 (define-key sf-mode-keymap
   (kbd "C-c C-s r")
   'sf-console
+)
+
+(define-key sf-mode-keymap
+  (kbd "C-c C-s e")
+  'sf-generate-entities
 )
 
 ;;;###autoload
