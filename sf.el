@@ -82,7 +82,7 @@
 ;;console
 (defun sf-console (parameter)
   "call the console of Sf"
-  (interactive "sParameters:")
+  (interactive "sCommand:")
   (shell-command
    (concat
     "php "
@@ -99,6 +99,13 @@
     "php "
     (expand-file-name "app/console " (eproject-root))
     "doctrine:generate:entities " bundle))
+)
+
+;;insert namespace
+(defun sf-namespace ()
+  "insert-namespace"
+  (interactive)
+  (insert (concat "namespace " default-directory))
 )
 
 
