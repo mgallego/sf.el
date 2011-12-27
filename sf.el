@@ -151,6 +151,49 @@
   'sf-generate-entities
 )
 
+;;(define-key sf-mode-kemap [menu-bar] (make-sparse-keymap))
+
+
+;;Make a menu
+(define-key sf-mode-keymap [menu-bar] (make-sparse-keymap))
+(define-key sf-mode-keymap [menu-bar sf2]
+  (cons "Sf2" (make-sparse-keymap "Sf2")))
+
+;; Define specific subcommands in this menu.
+(define-key sf-mode-keymap [menu-bar sf2 app-config]
+  '("Open app/config.yml" . sf-app-config))
+
+(define-key sf-mode-keymap [menu-bar sf2 app-parameters]
+  '("Open app/parameters.ini" . sf-app-parameters))
+
+(define-key sf-mode-keymap [menu-bar sf2 app-security]
+  '("Open app/config/security.yml" . sf-app-security))
+
+(define-key sf-mode-keymap [menu-bar sf2 app-routing]
+  '("Open app/config/routing.yml" . sf-app-routing))
+
+(define-key sf-mode-keymap [menu-bar sf2 app-kernel]
+  '("Open app/AppKernel.php" . sf-app-kernel))
+
+(define-key sf-mode-keymap [menu-bar sf2 app-autoload]
+  '("Open app/autoload.php" . sf-app-autoload))
+
+(define-key sf-mode-keymap [menu-bar sf2 app-security]
+  '("Open app/config/security.yml" . sf-app-security))
+
+(define-key sf-mode-keymap [menu-bar sf2 cache-clear]
+  '("Clear Dev Cache" . sf-cache-clear))
+
+(define-key sf-mode-keymap [menu-bar sf2 console]
+  '("Execute console command" . sf-console))
+
+
+(define-key sf-mode-keymap [menu-bar sf2 generate-entities]
+  '("Generate Entities..." . sf-generate-entities))
+
+
+
+
 ;;;###autoload
 (define-minor-mode sf-minor-mode
   nil                  ;default docstring
