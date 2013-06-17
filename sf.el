@@ -37,7 +37,7 @@
 (defun sf-app-parameters ()
   "open the app parameters in a new buffer"
   (interactive)
-  (sf-open-file "app/config/parameters.ini")
+  (sf-open-file "app/config/parameters.yml")
 )
 
 ;;open the security configuration file in a new buffer
